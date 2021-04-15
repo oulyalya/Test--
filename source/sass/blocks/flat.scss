@@ -18,6 +18,7 @@
   @include flex(row);
   justify-content: flex-start;
   flex-grow: 1;
+  flex-wrap: nowrap;
   padding: 0 24px;
 
   @include tablet {
@@ -33,6 +34,7 @@
 }
 
 .flat__details-wrapper {
+  max-width: 600px;
   padding: 0 32px;
 
   @include predesk {
