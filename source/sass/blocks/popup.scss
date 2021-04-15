@@ -1,0 +1,28 @@
+.popup {
+  position: relative;
+  padding: 24px 0;
+  background-color: #ffffff;
+
+  border-radius: 8px;
+  box-shadow: 0 0 10px 0 rgba(#000000, 0.3);
+
+  @include predesk {
+    padding-bottom: 15px;
+  }
+
+  @include tablet {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  @include mobile {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+
+.popup__close {
+  position: absolute;
+  top: 15px;
+  right: 12px;
+}

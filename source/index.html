@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <object style="display: none;" type="image/svg+xml" data="img/sprite_auto.svg"></object>
+
+  <div class="overlay">
+    <div class="container">
+      <div class="popup">
+        <button class="popup__close btn-close" type="button">
+          <svg viewbox="0 0 14 14" width="14" height="14">
+            <use xlink:href="img/sprite_auto.svg#icon-close"></use>
+          </svg>
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+        <article class="flat">
+          <div class="flat__info-wrapper">
+            <div class="flat__img-wrapper">
+              <img src="img/img-flat@1x.jpg" width="86" height="160" alt="Двухкомнатная квартира"
+                srcset="img/img-flat@2x.jpg 2x">
+            </div>
+            <div class="flat__details-wrapper">
+              <h1>2-к квартира</h1>
+              <dl>
+                <div>
+                  <dt>Этаж</dt>
+                  <dd>3 из 19</dd>
+                </div>
+                <div>
+                  <dt>Высота потолков</dt>
+                  <dd>3,2 м</dd>
+                </div>
+                <div>
+                  <dt>Отделка</dt>
+                  <dd>Предчистовая</dd>
+                </div>
+                <div>
+                  <dt>Общая площадь</dt>
+                  <dd>32,24 м²</dd>
+                </div>
+                <div>
+                  <dt>Жилая площадь</dt>
+                  <dd>22,24 м²</dd>
+                </div>
+                <div>
+                  <dt>Площадь кухни</dt>
+                  <dd>14,24 м²</dd>
+                </div>
+              </dl>
+              <div class="flat__tags-wrapper">
+                <div class="tag tag--yes">
+                  <p>Вы были на просмотре</p>
+                </div>
+                <div class="tag tag--no">
+                  <p>Дом аккредитован другим банком</p>
+                </div>
+              </div>
+            </div>
+            <div>
+            </div>
+          </div>
+          <div class="flat__price-wrapper">
+            <p>Ваша цена по брони до <time datetime="2021-09-19">19 сентября</time>
+            </p>
+            <strong>3 312 666 Р</strong>
+            <p>Текущая цена у застройщика<br>
+              дороже на <b>324 825 Р</b></p>
+            <a class="flat__btn btn btn--submit" href="#"><span>Выбрать для покупки</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+.tag {
+  display: inline-block;
+  vertical-align: middle;
+  width: max-content;
+  margin-bottom: 4px;
+  padding: 11px 15px;
+  font-size: 12px;
+  border-radius: 2em;
+
+  @include f_caption-med;
+}
+
+.tag--yes {
+  color: $c_yes;
+  background-color: rgba($c_yes, 0.2);
+}
+
+.tag--no {
+  color: $c_no;
+  background-color: rgba($c_no, 0.2);
+}
+
+.tag p {
+  position: relative;
+  margin: 0;
+  padding-left: 21px;
+}
+
+.tag p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+}
+
+.tag--yes p::before {
+  background-image: url("../../img/icon-tick.svg");
+}
+
+.tag--no p::before {
+  background-image: url("../../img/icon-cross.svg");
+}

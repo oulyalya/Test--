@@ -1,0 +1,222 @@
+@mixin predesk {
+  @media (min-width: $predesk_min) and (max-width: $predesk_max) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tab_min) and (max-width: $tab_max) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: 0) and (max-width: $mob_max) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: $retina_dpi), (min-resolution: $retina_dppx) {
+    @content;
+  }
+}
+
+@mixin flex($flex-direction) {
+  display: flex;
+  flex-direction: $flex-direction;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+}
+
+@mixin container {
+  position: relative;
+  width: auto;
+  min-width: $desk_min;
+  max-width: $desk_max;
+  margin: 0 auto;
+  padding: 0 $desk_pads;
+
+  @include predesk {
+    min-width: $predesk_min;
+    width: auto;
+    padding: 0 $predesk_pads;
+    overflow-x: hidden;
+  }
+
+  @include tablet {
+    min-width: $tab_min;
+    width: auto;
+    padding: 0 $tab_pads;
+    overflow-x: hidden;
+  }
+
+  @include mobile {
+    min-width: $mob_min;
+    width: 100%;
+    padding: 0 $mob_pads;
+    overflow-x: hidden;
+  }
+}
+
+@mixin font($size, $height, $weight) {
+  font-family: $font_main;
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+}
+
+@mixin f_heading-3 {
+  @include font(24px, 1.25, $bold);
+}
+
+@mixin f_heading-4 {
+  @include font(20px, 1.4, $bold);
+}
+
+@mixin f_paragraph-reg {
+  @include font(14px, 1.4, $reg);
+}
+
+@mixin f_paragraph-med {
+  @include font(14px, 1.4, $med);
+}
+
+@mixin f_caption-reg {
+  @include font(12px, 1.3, $reg);
+}
+
+@mixin f_caption-med {
+  @include font(12px, 1.3, $med);
+}
+
+/*
+основные кнопки
+начало
+*/
+@mixin button {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: max-content;
+  padding: 0.8rem 1.5rem;
+  font-size: 14px;
+
+  @include f_paragraph-med;
+  text-align: center;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+@mixin button-medium {
+  padding: 0.5rem 1rem;
+}
+
+@mixin button-small {
+  padding: 0.3rem 0.9rem;
+}
+
+@mixin button-colors($color, $bg, $bg-hov, $bg-act) {
+  color: $color;
+  background-color: $bg;
+
+  &:hover,
+  &:focus {
+    background-color: $bg-hov;
+  }
+
+  &:active {
+    background-color: $bg-act;
+  }
+}
+
+@mixin button-submit {
+  @include button-colors($c_text-dark, $accent, $accent-hover, $accent-active);
+}
+
+@mixin button-icon($url) {
+  & span {
+    position: relative;
+    padding-left: 20px;
+  }
+
+  & span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+    background-image: url($url);
+  }
+}
+/*
+основные кнопки
+конец
+*/
+
+/*
+кнопка закрыть
+начало
+*/
+@mixin button-close {
+  position: relative;
+  display: block;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 0 none;
+  cursor: pointer;
+  z-index: 10;
+
+  & svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translateX(-50%) translateY(-50%);
+    width: 20px;
+    height: 20px;
+    margin-left: 1.5px;
+    margin-top: 1.5px;
+    fill: $c_close;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $c_close-hover-bg;
+
+    & svg {
+      fill: $c_close-hover;
+    }
+  }
+
+  &:active {
+    background-color: $c_close-active-bg;
+
+    & svg {
+      fill: $c_close-active;
+    }
+  }
+}
+/*
+кнопка закрыть
+конец
+*/

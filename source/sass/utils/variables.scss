@@ -1,0 +1,45 @@
+$font_main: "Roboto", "Arial", sans-serif;
+$reg: 400;
+$med: 500;
+$bold: 700;
+
+$desk_min: 1280px;
+$desk_max: 1280px;
+$predesk_min: 920px;
+$predesk_max: 1279px;
+$tab_min: 768px;
+$tab_max: 919px;
+$mob_min: 320px;
+$mob_max: 767px;
+
+$desk_pads: 40px;
+$predesk_pads: 28px;
+$tab_pads: 28px;
+$mob_pads: 8px;
+
+$retina_dpi: 144dpi;
+$retina_dppx: 1.5dppx;
+
+$main-light: #f5f4f2;
+$main-middle: #989691;
+$main-dark: #383736;
+$accent: #fac62d;
+$accent-hover: #f0b505;
+$accent-active:#e1ab08;
+$red: #eb4b51;
+$green: #64b851;
+$blue: #2794db;
+
+$c_text-light: $main-middle;
+$c_text-dark: $main-dark;
+$c_btn-primary: $accent;
+$c_bg: $main-light;
+$c_close: #b2b0ab;
+$c_close-hover: $main-dark;
+$c_close-hover-bg: $main-light;
+$c_close-active: $main-dark;
+$c_close-active-bg: #e7e4de;
+$c_border: #f0eeeb;
+$c_no: $red;
+$c_yes: $green;
+$c_text-accent: $blue;

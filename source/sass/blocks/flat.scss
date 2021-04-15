@@ -1,0 +1,280 @@
+.flat {
+  @include flex(row);
+}
+
+.flat__img-wrapper {
+  display: flex;
+  width: 178px;
+  height: 178px;
+}
+
+.flat img {
+  width: 86px;
+  height: 160px;
+  margin: auto;
+}
+
+.flat__info-wrapper {
+  @include flex(row);
+  justify-content: flex-start;
+  flex-grow: 1;
+  padding: 0 24px;
+
+  @include tablet {
+    padding-bottom: 18px;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    padding-bottom: 15px;
+  }
+}
+
+.flat__details-wrapper {
+  padding: 0 32px;
+
+  @include predesk {
+    padding-right: 0;
+  }
+
+  @include tablet {
+    padding-top: 10px;
+    padding-right: 0;
+  }
+
+  @include mobile {
+    flex-grow: 1;
+    min-width: 264px;
+    max-width: 340px;
+    padding: 0;
+    padding-top: 15px;
+  }
+}
+
+.flat__tags-wrapper {
+  @include predesk {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    min-width: max-content;
+  }
+}
+
+.flat__tags-wrapper > div {
+  margin-right: 15px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.flat h1 {
+  margin: 0;
+
+  @include f_heading-3;
+
+  @include mobile {
+    @include f_heading-4;
+  }
+}
+
+.flat dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 15px;
+  grid-column-gap: 47px;
+  width: max-content;
+
+  @include predesk {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr 1fr;
+    padding-top: 3px;
+  }
+}
+
+.flat dl > div {
+  display: block;
+  max-width: 98px;
+}
+
+.flat dl > div:nth-child(3) {
+  @include predesk {
+    order: 4;
+  }
+
+  @include tablet {
+    order: 4;
+  }
+
+  @include mobile {
+    order: 4;
+  }
+}
+
+.flat dl > div:nth-child(4) {
+  @include predesk {
+    order: 3;
+  }
+
+  @include tablet {
+    order: 3;
+  }
+
+  @include mobile {
+    order: 3;
+  }
+}
+
+.flat dl > div:nth-child(5) {
+  @include predesk {
+    order: 5;
+  }
+
+  @include tablet {
+    order: 5;
+  }
+
+  @include mobile {
+    order: 5;
+  }
+}
+
+.flat dl > div:nth-child(6) {
+  @include predesk {
+    order: 6;
+  }
+
+  @include tablet {
+    order: 6;
+  }
+
+  @include mobile {
+    order: 6;
+  }
+}
+
+.flat dt {
+  margin-left: 0;
+  margin-bottom: 0;
+
+  @include f_caption-reg;
+  color: $c_text-light;
+}
+
+.flat dd {
+  margin-left: 0;
+  margin-top: 2px;
+
+  @include f_caption-med;
+  font-size: 14px;
+}
+
+.flat time {
+  @include f_caption-med;
+  font-size: 14px;
+  color: $c_text-accent;
+}
+
+.flat__btn {
+  @include button-icon("../img/icon-key.svg");
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 10px;
+  font-size: 14px;
+
+  @include tablet {
+    margin-top: 25px;
+  }
+
+  @include mobile {
+    margin-top: 18px;
+    margin-bottom: 10px;
+  }
+}
+
+.flat__price-wrapper {
+  position: relative;
+
+  @include flex(column);
+  justify-content: flex-start;
+  min-width: 332px;
+  padding-left: 32px;
+  padding-right: 32px;
+
+  @include tablet {
+    width: 100%;
+    padding-top: 20px;
+    border-left: 0 none;
+  }
+
+  @include mobile {
+    width: 100%;
+    min-width: 0;
+    padding-top: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 0 none;
+  }
+}
+
+.flat__price-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: $c_border;
+
+  @include tablet {
+    width: calc(100% - (2 * 32px));
+    height: 1px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  @include mobile {
+    width: calc(100% - (2 * 20px));
+    height: 1px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.flat__price-wrapper p {
+  margin: 0;
+}
+
+.flat__price-wrapper b {
+  @include f_paragraph-med;
+  color: $c-no;
+}
+
+.flat__price-wrapper strong {
+  @include f_heading-3;
+  margin-top: 8px;
+  margin-bottom: 16px;
+
+  @include mobile {
+    @include f_heading-4;
+    margin-top: 0;
+    margin-bottom: 13px;
+  }
+}
